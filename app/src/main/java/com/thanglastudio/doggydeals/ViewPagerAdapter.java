@@ -68,11 +68,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 resId = R.layout.tab_pet;
                 view = inflater.inflate(resId, null);
                 break;
-
-
               
             case 1:
-                resId = R.layout.tab_videos;
+                resId = R.layout.tab_register;
                 view = inflater.inflate(resId, null);
                 break;
             case 2:

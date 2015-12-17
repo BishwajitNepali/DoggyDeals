@@ -11,7 +11,7 @@ public class Register extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_videos, container, false);
+        View v = inflater.inflate(R.layout.tab_register, container, false);
         return v;
     }
 }
