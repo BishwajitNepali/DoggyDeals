@@ -28,15 +28,15 @@ public class Register extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         v = inflater.inflate(R.layout.tab_register, container, false);
+        v = inflater.inflate(R.layout.tab_register, container, false);
 
         ButterKnife.bind(getActivity());
 
-        profile = (ImageView)v. findViewById(R.id.picture);
+        profile = (ImageView) v.findViewById(R.id.picture);
         register = (Button) v.findViewById(R.id.button_register);
         et_name = (EditText) v.findViewById(R.id.et_name);
         et_breed = (EditText) v.findViewById(R.id.et_breed);
-        et_height = (EditText)v.findViewById(R.id.et_height);
+        et_height = (EditText) v.findViewById(R.id.et_height);
         et_weight = (EditText) v.findViewById(R.id.et_weight);
         et_age = (EditText) v.findViewById(R.id.et_age);
 
@@ -54,7 +54,15 @@ public class Register extends Fragment {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-               register();
+
+
+                String TabOfFragmentB = ((DashBoard) getActivity()).getTabFragmentNext();
+
+            /*    MyGallery fragmentGallery = (MyGallery) getActivity()
+                        .getSupportFragmentManager()
+                        .findFragmentByTag(TabOfFragmentB);
+
+                fragmentGallery.updateText("hello");*/
 
             }
 
@@ -69,25 +77,33 @@ public class Register extends Fragment {
     private void register() {
 
 
-        helper = new PetDBHelper(getActivity());
+
+       /* helper = new PetDBHelper(getActivity());
         long res = helper.insertData(et_name.getText().toString(),
                 et_breed.getText().toString(), et_height.getText()
                         .toString(), et_weight.getText().toString(),
                 et_age.getText().toString(), selectedImagePath);
 
+       // sendData(et_name.getText() + "");
+
         if (res != -1) {
 
             Toast.makeText(getActivity(), "Data Inserted",
                     Toast.LENGTH_LONG).show();
+
+
             clearText();
 
         } else
             Toast.makeText(getActivity(), "Data Not Inserted",
                     Toast.LENGTH_LONG).show();
-        clearText();
+        clearText();*/
+
+
     }
 
-    public void openPhotoChooser(){
+
+    public void openPhotoChooser() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -97,6 +113,7 @@ public class Register extends Fragment {
 
 
     }
+
     protected void clearText() {
         // TODO Auto-generated method stub
         et_age.setText("");

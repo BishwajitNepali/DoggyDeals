@@ -1,5 +1,6 @@
 package com.thanglastudio.doggydeals;
 
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,13 +8,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DashBoard extends AppCompatActivity {
+public class DashBoard extends FragmentActivity {
 	private Toolbar toolbar;
 	private ViewPager pager;
 	ViewPagerAdapter adapter;
 	SlidingTabLayout tabs;
 	CharSequence Titles[] = { "Pet Store", "Register Pet", " My Pet Gallery" };
 	int Numboftabs = 3;
+
+	String TabFragmentNext;
+
+	public void setTabFragmentNext(String t){
+		TabFragmentNext = t;
+	}
+
+	public String getTabFragmentNext(){
+		return TabFragmentNext;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +35,7 @@ public class DashBoard extends AppCompatActivity {
 		//setSupportActionBar(toolbar);
 		toolbar.setNavigationIcon(R.drawable.icon);
 		toolbar.setNavigationContentDescription("Navigation Icon");
-		getSupportActionBar().setTitle("DOG DEALS");
+		//getSupportActionBar().setTitle("DOG DEALS");
 		toolbar.setSubtitle("All about pets");
 
 		// Creating The ViewPagerAdapter and Passing Fragment Manager, Titles
@@ -55,19 +66,5 @@ public class DashBoard extends AppCompatActivity {
 
 	}
 
-	/*
-	 * @Override public boolean onCreateOptionsMenu(Menu menu) { // Inflate the
-	 * menu; this adds items to the action bar if it is present.
-	 * getMenuInflater().inflate(R.menu.menu_main, menu); return true; }
-	 * 
-	 * @Override public boolean onOptionsItemSelected(MenuItem item) { // Handle
-	 * action bar item clicks here. The action bar will // automatically handle
-	 * clicks on the Home/Up button, so long // as you specify a parent activity
-	 * in AndroidManifest.xml. int id = item.getItemId();
-	 * 
-	 * //noinspection SimplifiableIfStatement if (id == R.id.action_settings) {
-	 * return true; }
-	 * 
-	 * return super.onOptionsItemSelected(item); }
-	 */
+
 }
