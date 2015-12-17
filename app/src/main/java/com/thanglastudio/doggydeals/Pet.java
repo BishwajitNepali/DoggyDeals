@@ -11,7 +11,7 @@ public class Pet extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.tab_news, container, false);
+        View v = inflater.inflate(R.layout.tab_pet, container, false);
         return v;
     }
 }
